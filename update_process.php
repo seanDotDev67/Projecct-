@@ -16,7 +16,8 @@
                 m = :m,
                 email = :email,
                 username = :username,
-                password= :password";
+                password= :password
+                WHERE id = :id";
         try{
             $stmt = $pdo->prepare($sql);
 
@@ -30,7 +31,7 @@
             ':id'=> $id
         ]);
         if($updated){
-            header("Location: customer.php?succes=1");
+            header("Location: customer.php?success=1");
             exit();
         }else{
             header("Location: customer.php?error=1");
